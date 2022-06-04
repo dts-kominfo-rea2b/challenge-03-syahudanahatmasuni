@@ -21,10 +21,19 @@ const dataBelanjaan = [
 ];
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const listBelanjaan = null;
+const listBelanjaan = (keranjang) => {
+  return keranjang.map((data) => `- ${data.nama} x ${data.kuantitas}`);
+};
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const totalBelanjaan = null;
+const totalBelanjaan = (keranjang) => {
+  let totalPriceItem = keranjang.map((data) => data.harga * data.kuantitas);
+  let total = 0;
+  for (let i = 0; i < totalPriceItem.length; i++) {
+    total += totalPriceItem[i];
+  }
+  return total;
+};
 
 // ! JANGAN DIMODIFIKASI
 const main = () => {
